@@ -1,0 +1,69 @@
+/*
+/ - The root directory or a separator when listing directories
+. - The current directory (also ./) or the same level
+.. - The directory one level up (also ../)
+../.. - The directory that is two levels up; that is, the directory that is one level up from ..
+~ - Your "home" directory, or the directory you are placed in when you log in.
+* - The "splat" or "glob" operator. This is the wildcard of the command line and represents "any characters."
+*/
+
+ #1. Make a directory in your home directory called "cli-tmp"
+mkdir cli-tmp
+
+#2. From home directory, create afile in the cli-tmp directory called "from-home.txt"
+ cd
+ touch cli-tmp/in-cli-tmp
+ 
+#3. Navigate to the cli-tmp directory, then create a file called "in-cli-tmp"
+cd cli-tmp
+touch in-cli-tmp
+
+#4. Try to make a directory called "in-cli-tmp" within cli-tmp. What happens?
+mkdir in-cli-tmp
+#fails, file exists "mkdir: in-cli-tmp: File exists"
+
+#5. Remove the from-home.txt
+rm from-home.txt
+
+#6. Remove the cli-tmp directory
+rm cli-tmp #fails
+rm -r cli-tmp
+
+#7. Create a nested set of directories in your home directory: cli-tmp > parents > children > grandchildren
+mkdir -p cli-tmp/parents/children/grandchildren
+
+#8. Navigate to the children directory
+cd children #fails
+cd ~/cli-tmp/parents/children
+
+#9. create a file named "bob"
+touch bob
+
+#10. Move the file named bob to the grandchildren directory
+mv bob grandchildren
+
+#11. Copy the grandchildren directory to the parents directory with a new name: nephews
+cp -r grandchildren../nephews
+
+#12. Copy the contents of the "nephews" directory to the "children" directory.
+cp ../nephews/* ./
+
+#13. View what you've done with the tree command: tree ~/cli-tmp.
+$ tree ~/cli-tmp
+/Users/[username]/cli-tmp/
+└── parents
+  ├── children
+  │   ├── bob
+  │   └── grandchildren
+  │       └── bob
+  └── nephews
+      └── bob
+      
+#14. Remove the "bob" file from the grandchildren directory.
+ rm ~/cli-tmp/parents/children/grandchildren/bob
+ 
+#15. Remove the cli-tmp directory.
+ cd
+ rm -r cli-tmp
+ 
+ 

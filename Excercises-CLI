@@ -1,0 +1,66 @@
+/* 1. The echo command has only one optional flag: -n, which means "Do not print the trailing newline character." 
+Experiment with echo. Run the following commands, guessing before running each what the output will be: */
+
+echo "hello world"
+#prints "hello world
+
+echo hello world
+#prints hello world
+
+echo -n hello world
+#prints hello world but cuts the next line
+
+echo hello world -n
+#prints hello world -n
+
+echo "-n hello world"
+#prints -n hello world 
+
+/* 2. Covers the cd, ls, and pwd commands, no explicit excersises to share: cd is command for 
+change directory, ls shows files and directories inside a directory, 
+pwd shows what directory you are in currently*/
+
+/*3. The command line offers a bunch of commands to work with files and directories. 
+This exercise will show the basic usage of the following: touch, mkdir, mv, cp, and rm. */
+
+#touch - creates an empty file
+#mv - moves or renames files
+#cp - copies files from one location to another, potentially renaming
+#rm - removes files, rm -r removes files recursively (removes all nested etc)
+
+/* 4. One of the most common tasks when using the command line interface is reading the contents of a file. 
+This exercise will go over some common commands for doing so: cat, more, less, head, and tail. */
+
+#cat - prints out all contents of a file
+#head - prints out the first few lines of a file 
+#tail - prints out the last few lines of a file
+
+#more - prints out one screens worth of a file at a time, 
+#use down arrow to go one more line, use space to go next page. use "1" to exit
+
+#less - when you need to navigate backward or forward in a file. 
+#Use up and down keys for single lines, page up and down for pages, or space. use "1" to exit
+
+/* 5. You can get more information about what a command does, 
+how it works, and which flags you can use by referencing the manual for that command. 
+To read the manual pages (typically called manpages) for a command, use the man command: */
+
+#man touch
+#to exit man, use "q"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

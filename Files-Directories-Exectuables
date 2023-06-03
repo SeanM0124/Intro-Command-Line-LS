@@ -78,6 +78,7 @@ $ tree ~/cli-tmp
  
  #3. What's the difference between abc/ and /abc?
  #abc/ is the the larger path prior to a working directory, /abc is a inside of the root directory
+ 
  #4. What does ../abc mean?
  #../abc means the directory one level up from abc
  

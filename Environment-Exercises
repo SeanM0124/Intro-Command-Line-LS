@@ -1,0 +1,61 @@
+#1. 
+/*
+Run the following commands to experiment with altering your command line environment:
+
+$ cd
+$ PS1="\u@\w$ "
+ubuntu@~$ echo "Hello world"
+Hello world
+ubuntu@~$
+*/
+#Used PROMPT='%n:%m: ' due to being on zsh, prompt lasted until i exited the session, when reopen it return to normal.
+#echo 'export PS1="this is a test$ "' >> ~/.zshrc - Using this the prompt carried over to the new session
+
+#2.
+/* As discussed previously in this chapter, the PATH variable determines which files can be executed without specifying their path explicitly. 
+Run through the commands in this exercise to see this principle in action. */
+
+OLDPATH=$PATH
+echo $OLDPATH
+cd /usr/local
+
+#Now, create an executable in your home directory by entering the following:
+
+cd ~
+echo '#!/bin/bash' > test.sh # Replace existing test.sh file
+echo 'echo "Hello world"' >> test.sh
+chmod +x test.sh # Make sure test.sh has the executable permission
+
+#Run the executable, first by specifying the path, then by running it like a command:
+
+$ ./test.sh
+Hello world
+$ test.sh
+zsh: command not found: test.sh
+
+#Now, change PATH more permanently for your current session, and try to run test.sh again:
+
+seanmentele:Seans-MacBook-Pro: PATH=$PATH:$HOME
+seanmentele:Seans-MacBook-Pro: echo $PATH
+/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/seanmentele
+seanmentele:Seans-MacBook-Pro: test.sh
+Hello world
+seanmentele:Seans-MacBook-Pro: cd /
+seanmentele:Seans-MacBook-Pro: test.sh
+Hello world
+seanmentele:Seans-MacBook-Pro:
+
+#Exit out of Terminal and then open it up again. Try running test.sh again:
+$test.sh
+zsh: command not found: test.sh
+
+
+
+
+
+
+
+
+
+
+
